@@ -166,23 +166,23 @@ do
             echo "[+] HIJACKABLE SUBDOMAINS FOUND!"
             notify "SubJack completed. One or more hijackable subdomains found!"
             notify "Hijackable domains: $(cat "subjack-$DOMAIN.txt")"
-            notify "Gathering live page screenshots with WebScreenshot..."
+            # notify "Gathering live page screenshots with WebScreenshot..."
         else
             echo "[-] NO HIJACKABLE SUBDOMAINS FOUND."
-            notify "No hijackable subdomains found. Gathering live page screenshots with WebScreenshot..."
+            # notify "No hijackable subdomains found. Gathering live page screenshots with WebScreenshot..."
         fi
     else
         echo "[-] SKIPPING SUBJACK"
     fi
 
-    if [ ! -d "webscreenshot" ] || [ "$overwrite" = true ]
-    then
-        echo "[*] RUNNING WEBSCREENSHOT..."
-        webscreenshot -i "livedomains-$DOMAIN.txt" -o webscreenshot --no-error-file
-        notify "WebScreenshot completed! Took *$(find webscreenshot/* -maxdepth 0 | wc -l)* screenshots. Getting Wayback Machine path list with GAU..."
-    else
-        echo "[-] SKIPPING WEBSCREENSHOT"
-    fi
+    #if [ ! -d "webscreenshot" ] || [ "$overwrite" = true ]
+    #then
+    #    echo "[*] RUNNING WEBSCREENSHOT..."
+    #    webscreenshot -i "livedomains-$DOMAIN.txt" -o webscreenshot --no-error-file
+    #    notify "WebScreenshot completed! Took *$(find webscreenshot/* -maxdepth 0 | wc -l)* screenshots. Getting Wayback Machine path list with GAU..."
+    #else
+    #    echo "[-] SKIPPING WEBSCREENSHOT"
+    #fi
 
     if [ ! -f "WayBack-$DOMAIN.txt" ] || [ "$overwrite" = true ]
     then

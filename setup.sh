@@ -41,7 +41,7 @@ mkdir -p "$toolsDir"
 
 apt update -y 
 apt install -y phantomjs xvfb dnsutils nmap
-pip install webscreenshot
+### pip install webscreenshot
 
 echo "[*] UPDATING GOLANG, MAY TAKE A WHILE.."
 curl "https://raw.githubusercontent.com/udhos/update-golang/master/update-golang.sh" | bash &> /dev/null

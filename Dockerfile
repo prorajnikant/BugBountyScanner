@@ -24,7 +24,7 @@ RUN apt-get update >/dev/null && \
     git >/dev/null \
     && rm -rf /var/lib/apt/lists/*
 
-RUN pip3 install webscreenshot >/dev/null
+# RUN pip3 install webscreenshot >/dev/null
 
 # Golang
 RUN cd /opt && \
